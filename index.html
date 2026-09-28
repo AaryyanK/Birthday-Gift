@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 18th Birthday Laxmi</title>
+
+    <style>
+
+        /* =========================
+           BASIC PAGE
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at top, #292016, #0b0909 65%);
+
+            color: #fff7e8;
+            font-family: Georgia, serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+
+        /* =========================
+           POSTCARD
+        ========================= */
+
+        .postcard {
+            width: 360px;
+            min-height: 470px;
+
+            padding: 55px 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f0dfc1,
+                    #d8bd91
+                );
+
+            color: #241b13;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                inset 0 0 30px rgba(255,255,255,0.25);
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            transition: all 1s ease;
+        }
+
+        .postcard::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border: 1px solid rgba(60,40,20,0.3);
+
+            border-radius: 12px;
+
+            pointer-events: none;
+        }
+
+        .small-text {
+            letter-spacing: 5px;
+            font-size: 12px;
+        }
+
+        .postcard h1 {
+            font-size: 65px;
+            font-weight: normal;
+
+            margin: 15px 0;
+
+            font-style: italic;
+        }
+
+        .postcard p {
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        button {
+            margin-top: 30px;
+
+            padding: 15px 28px;
+
+            border: 1px solid #6f5738;
+            border-radius: 50px;
+
+            background: #241b13;
+            color: #fff7e8;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.04);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.3);
+        }
+
+
+        /* =========================
+           BEIGE MESSAGE PAGE
+        ========================= */
+
+        .message-page {
+            display: none;
+
+            width: 90%;
+            max-width: 650px;
+
+            padding: 55px 35px;
+
+            background: #e8d5b5;
+
+            color: #241b13;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.6);
+
+            animation: appear 1s ease;
+        }
+
+        .message-page h2 {
+            font-size: 42px;
+            font-weight: normal;
+        }
+
+        .message-page p {
+            font-family: Arial, sans-serif;
+
+            line-height: 1.8;
+
+            color: #493a2b;
+        }
+
+
+        /* =========================
+           BIRTHDAY PAGE
+        ========================= */
+
+        .birthday-page {
+            display: none;
+
+            width: 100%;
+
+            text-align: center;
+
+            animation: appear 1s ease;
+        }
+
+        .birthday-page h2 {
+            font-size: 55px;
+            font-weight: normal;
+
+            margin-bottom: 10px;
+        }
+
+        .birthday-page p {
+            color: #d8cdbd;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           CAKE
+        ========================= */
+
+        .cake-area {
+            margin-top: 50px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+        .cake {
+            position: relative;
+
+            width: 260px;
+            height: 170px;
+
+            margin-top: 70px;
+        }
+
+        .cake-top {
+            position: absolute;
+
+            top: 25px;
+            left: 20px;
+
+            width: 220px;
+            height: 70px;
+
+            background: #d9a066;
+
+            border-radius: 50%;
+
+            box-shadow:
+                inset 0 -10px rgba(100,50,20,0.15);
+        }
+
+        .cake-body {
+            position: absolute;
+
+            top: 60px;
+            left: 20px;
+
+            width: 220px;
+            height: 100px;
+
+            background: #9b5c36;
+
+            border-radius:
+                0 0 25px 25px;
+        }
+
+        .cream {
+            position: absolute;
+
+            top: 65px;
+            left: 30px;
+
+            width: 200px;
+            height: 35px;
+
+            background: #fff0d2;
+
+            border-radius: 50%;
+        }
+
+
+        /* =========================
+           CANDLES
+        ========================= */
+
+        .candles {
+            position: absolute;
+
+            top: -30px;
+            left: 70px;
+
+            width: 120px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .candle {
+            width: 22px;
+            height: 65px;
+
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    #f4d58d,
+                    #f4d58d 7px,
+                    #9b6d32 7px,
+                    #9b6d32 10px
+                );
+
+            border-radius: 5px;
+
+            position: relative;
+        }
+
+
+        /* =========================
+           FLAMES
+        ========================= */
+
+        .flame {
+            position: absolute;
+
+            width: 18px;
+            height: 25px;
+
+            background: #ffd36a;
+
+            border-radius:
+                50% 50% 50% 0;
+
+            transform:
+                rotate(-45deg);
+
+            top: -23px;
+            left: 2px;
+
+            box-shadow:
+                0 0 15px #ffb52e,
+                0 0 30px #ff8c00;
+
+            animation: flicker 0.15s infinite alternate;
+        }
+
+        .flame.off {
+            display: none;
+        }
+
+
+        /* =========================
+           CAKE BUTTON
+        ========================= */
+
+        .blow-button {
+            margin-top: 45px;
+        }
+
+
+        /* =========================
+           FINAL MESSAGE
+        ========================= */
+
+        .final-message {
+            display: none;
+
+            margin-top: 45px;
+
+            animation:
+                finalReveal 1.5s ease forwards;
+        }
+
+        .final-message h3 {
+            font-size: 45px;
+
+            color: #e8c878;
+
+            font-weight: normal;
+        }
+
+        .final-message p {
+            max-width: 600px;
+
+            margin: auto;
+
+            line-height: 1.8;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+            position: fixed;
+
+            top: -20px;
+
+            width: 9px;
+            height: 16px;
+
+            z-index: 100;
+
+            animation:
+                fall 4s linear forwards;
+        }
+
+
+        /* =========================
+           SPARKLES
+        ========================= */
+
+        .sparkle {
+            position: fixed;
+
+            width: 6px;
+            height: 6px;
+
+            background: #f4d58d;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            animation:
+                sparkleMove 2s ease-out forwards;
+        }
+
+
+        /* =========================
+           SMOKE
+        ========================= */
+
+        .smoke {
+            position: absolute;
+
+            width: 18px;
+            height: 18px;
+
+            background: rgba(220,220,220,0.4);
+
+            border-radius: 50%;
+
+            top: -40px;
+            left: 2px;
+
+            animation:
+                smokeUp 2s ease-out forwards;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes flicker {
+
+            from {
+                transform:
+                    rotate(-45deg)
+                    scale(1);
+            }
+
+            to {
+                transform:
+                    rotate(-45deg)
+                    scale(1.12);
+            }
+        }
+
+        @keyframes fall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+            }
+        }
+
+        @keyframes sparkleMove {
+
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform:
+                    translate(
+                        calc(-100px + 200px * var(--x)),
+                        calc(-100px + 200px * var(--y))
+                    )
+                    scale(0);
+            }
+        }
+
+        @keyframes smokeUp {
+
+            from {
+                opacity: 0.7;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            to {
+                opacity: 0;
+
+                transform:
+                    translateY(-70px)
+                    scale(2.5);
+            }
+        }
+
+        @keyframes finalReveal {
+
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .postcard {
+                width: 320px;
+                min-height: 430px;
+            }
+
+            .postcard h1 {
+                font-size: 55px;
+            }
+
+            .birthday-page h2 {
+                font-size: 40px;
+            }
+
+            .cake {
+                transform: scale(0.85);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =====================
+             POSTCARD
+        ====================== -->
+
+        <div class="postcard" id="postcard">
+
+            <span class="small-text">
+                A LITTLE SOMETHING FOR
+            </span>
+
+            <h1>Laxmi</h1>
+
+            <p>
+                Your 18th Birthday
+            </p>
+
+            <button onclick="openPostcard()">
+                Open Your Birthday Surprise ✨
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================
+             BEIGE MESSAGE PAGE
+        ====================== -->
+
+        <div class="message-page" id="messagePage">
+
+            <span class="small-text">
+                CHAPTER 18
+            </span>
+
+            <h2>
+                Welcome to 18 🤎
+            </h2>
+
+            <p>
+                Eighteen is not just another number.
+                It's the beginning of a beautiful new chapter.
+            </p>
+
+            <p>
+                More dreams. More laughter.
+                More memories waiting to happen.
+            </p>
+
+            <p>
+                And today is all about celebrating YOU.
+            </p>
+
+            <button onclick="continueForward()">
+                Continue Forward →
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================
+             BIRTHDAY PAGE
+        ====================== -->
+
+        <div class="birthday-page" id="birthdayPage">
+
+            <h2>
+                Happy 18th Birthday
+            </h2>
+
+            <p>
+                Laxmi ✨
+            </p>
+
+
+            <!-- CAKE -->
+
+            <div class="cake-area">
+
+                <div class="cake">
+
+                    <div class="candles">
+
+                        <div class="candle">
+
+                            <div class="flame"></div>
+
+                        </div>
+
+                        <div class="candle">
+
+                            <div class="flame"></div>
+
+                        </div>
+
+                        <div class="candle">
+
+                            <div class="flame"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cake-top"></div>
+
+                    <div class="cream"></div>
+
+                    <div class="cake-body"></div>
+
+                </div>
+
+
+                <button
+                    class="blow-button"
+                    onclick="blowCandles()">
+
+                    💨 Blow Out The Candles
+
+                </button>
+
+
+                <!-- FINAL MESSAGE -->
+
+                <div
+                    class="final-message"
+                    id="finalMessage">
+
+                    <h3>
+                        Happy Birthday, Laxmi! ❤️
+                    </h3>
+
+                    <p>
+                        May your 18th year be filled with
+                        beautiful moments, big dreams,
+                        endless laughter and everything
+                        that makes you genuinely happy.
+                    </p>
+
+                    <p>
+                        Here's to your next beautiful chapter. ✨
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           OPEN POSTCARD
+        ========================= */
+
+        function openPostcard() {
+
+            const postcard =
+                document.getElementById("postcard");
+
+            const messagePage =
+                document.getElementById("messagePage");
+
+
+            postcard.style.transform =
+                "scale(0.8) rotateY(90deg)";
+
+            postcard.style.opacity = "0";
+
+
+            setTimeout(function () {
+
+                postcard.style.display = "none";
+
+                messagePage.style.display = "block";
+
+            }, 700);
+
+        }
+
+
+
+        /* =========================
+           CONTINUE FORWARD
+        ========================= */
+
+        function continueForward() {
+
+            const messagePage =
+                document.getElementById("messagePage");
+
+            const birthdayPage =
+                document.getElementById("birthdayPage");
+
+
+            messagePage.style.opacity = "0";
+
+
+            setTimeout(function () {
+
+                messagePage.style.display = "none";
+
+                birthdayPage.style.display = "block";
+
+                createSparkles();
+
+            }, 500);
+
+        }
+
+
+
+        /* =========================
+           BLOW CANDLES
+        ========================= */
+
+        function blowCandles() {
+
+            const flames =
+                document.querySelectorAll(".flame");
+
+
+            flames.forEach(function (flame) {
+
+                flame.classList.add("off");
+
+
+                /* CREATE SMOKE */
+
+                const smoke =
+                    document.createElement("div");
+
+                smoke.classList.add("smoke");
+
+                flame.parentElement.appendChild(smoke);
+
+            });
+
+
+            /* CONFETTI */
+
+            createConfetti();
+
+
+            /* SPARKLES */
+
+            createSparkles();
+
+
+            /* SHOW FINAL MESSAGE */
+
+            setTimeout(function () {
+
+                document.getElementById(
+                    "finalMessage"
+                ).style.display = "block";
+
+            }, 1000);
+
+        }
+
+
+
+        /* =========================
+           CONFETTI FUNCTION
+        ========================= */
+
+        function createConfetti() {
+
+            for (
+                let i = 0;
+                i < 100;
+                i++
+            ) {
+
+                const confetti =
+                    document.createElement("div");
+
+
+                confetti.classList.add(
+                    "confetti"
+                );
+
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                confetti.style.background =
+                    randomColor();
+
+
+                confetti.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+
+                confetti.style.transform =
+                    "rotate(" +
+                    Math.random() * 360 +
+                    "deg)";
+
+
+                document.body.appendChild(
+                    confetti
+                );
+
+
+                setTimeout(function () {
+
+                    confetti.remove();
+
+                }, 5000);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SPARKLE FUNCTION
+        ========================= */
+
+        function createSparkles() {
+
+            for (
+                let i = 0;
+                i < 40;
+                i++
+            ) {
+
+                const sparkle =
+                    document.createElement("div");
+
+
+                sparkle.classList.add(
+                    "sparkle"
+                );
+
+
+                sparkle.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                sparkle.style.top =
+                    Math.random() * 100 + "vh";
+
+
+                sparkle.style.setProperty(
+                    "--x",
+                    Math.random()
+                );
+
+
+                sparkle.style.setProperty(
+                    "--y",
+                    Math.random()
+                );
+
+
+                document.body.appendChild(
+                    sparkle
+                );
+
+
+                setTimeout(function () {
+
+                    sparkle.remove();
+
+                }, 2000);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           RANDOM CONFETTI COLORS
+        ========================= */
+
+        function randomColor() {
+
+            const colors = [
+
+                "#e8c878",
+                "#fff7e8",
+                "#c99a5b",
+                "#d8b4a0",
+                "#ffffff"
+
+            ];
+
+
+            return colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+        }
+
+    </script>
+
+</body>
+
+</html>
